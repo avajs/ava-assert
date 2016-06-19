@@ -1,5 +1,7 @@
 import test from 'ava';
 import Observable from 'zen-observable';
+import callSignature from 'call-signature';
+import {ENHANCED, NOT_ENHANCED} from './patterns';
 import assert from './';
 
 test('.pass()', t => {
@@ -424,4 +426,19 @@ test('.deepEqual() should not mask RangeError from underlying assert', t => {
 	t.notThrows(() => {
 		assert.deepEqual(a, b);
 	});
+});
+
+test('patterns', t => {
+	// Validates that our power-assert patterns match the API 
+	function methodName(signature) {
+		var parsed = callSignature.parse(signature);
+		t.is(parsed.callee.object, 't');
+		return parsed.callee.member;
+	}
+
+	const allPatterns = ENHANCED.map(methodName).concat(NOT_ENHANCED.map(methodName)).sort();
+
+	const allMethods = Object.keys(assert).sort();
+
+	t.deepEqual(allMethods, allPatterns);
 });

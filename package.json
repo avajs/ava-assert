@@ -16,7 +16,8 @@
     "test": "xo && nyc ava"
   },
   "files": [
-    "index.js"
+    "index.js",
+    "patterns.js"
   ],
   "keywords": [
     "ava",
@@ -31,6 +32,7 @@
   },
   "devDependencies": {
     "ava": "^0.15.1",
+    "call-signature": "0.0.2",
     "coveralls": "^2.11.9",
     "nyc": "^6.4.0",
     "xo": "^0.16.0",
