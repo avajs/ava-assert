@@ -1,5 +1,4 @@
 import test from 'ava';
-import Observable from 'zen-observable';
 import callSignature from 'call-signature';
 import {ENHANCED, NOT_ENHANCED} from './patterns';
 import assert from './';
@@ -284,24 +283,6 @@ test('.notThrows() - Promises', t => {
 	t.notThrows(assert.notThrows(Promise.resolve()));
 
 	t.throws(assert.notThrows(Promise.reject(new Error('foo'))));
-});
-
-function throwingObservable() {
-	return new Observable(function (subscriber) {
-		setTimeout(() => subscriber.error(new Error('foo')), 0);
-	});
-}
-
-test('.throws() - Observables', t => {
-	t.notThrows(assert.throws(throwingObservable()));
-
-	t.throws(assert.throws(Observable.of(1, 2, 3)));
-});
-
-test('.notThrows() - Observables', t => {
-	t.notThrows(assert.notThrows(Observable.of(1, 2, 3)));
-
-	t.throws(assert.notThrows(throwingObservable()));
 });
 
 test('.throws() returns the thrown error', t => {
