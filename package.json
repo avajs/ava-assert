@@ -1,0 +1,45 @@
+{
+  "name": "ava-assert",
+  "version": "0.0.0",
+  "description": "The core assertion library for",
+  "license": "MIT",
+  "repository": "avajs/ava-assert",
+  "author": {
+    "name": "James Talmage",
+    "email": "james@talmage.io",
+    "url": "ava.li"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "xo && nyc ava"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "ava",
+    "assert"
+  ],
+  "dependencies": {
+    "core-assert": "^0.2.0",
+    "is-observable": "^0.2.0",
+    "is-promise": "^2.1.0",
+    "not-so-shallow": "^0.1.3",
+    "observable-to-promise": "^0.4.0"
+  },
+  "devDependencies": {
+    "ava": "^0.15.1",
+    "coveralls": "^2.11.9",
+    "nyc": "^6.4.0",
+    "xo": "^0.16.0",
+    "zen-observable": "^0.2.1"
+  },
+  "nyc": {
+    "reporter": [
+      "lcov",
+      "text"
+    ]
+  }
+}
