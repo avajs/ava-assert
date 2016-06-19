@@ -15,8 +15,6 @@ $ npm install --save ava-assert
 ```js
 const avaAssert = require('ava-assert');
 
-avaAssert('unicorns');
-
 avaAssert.is(1 + 1, 2);
 ```
 
