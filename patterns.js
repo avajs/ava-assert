@@ -1,4 +1,4 @@
-// power-assert patterns 
+// power-assert patterns
 
 module.exports.ENHANCED = [
 	't.truthy(value, [message])',

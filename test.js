@@ -429,7 +429,7 @@ test('.deepEqual() should not mask RangeError from underlying assert', t => {
 });
 
 test('patterns', t => {
-	// Validates that our power-assert patterns match the API 
+	// Validates that our power-assert patterns match the API
 	function methodName(signature) {
 		var parsed = callSignature.parse(signature);
 		t.is(parsed.callee.object, 't');
