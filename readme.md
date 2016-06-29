@@ -2,6 +2,8 @@
 
 > The core assertion library for [AVA](https://ava.li)
 
+**DON'T USE THIS**
+
 
 ## Install
 
